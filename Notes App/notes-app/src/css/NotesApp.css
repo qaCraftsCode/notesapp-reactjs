@@ -1,0 +1,434 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
+
+.section {
+  max-width: 800px;
+  margin: 1rem auto;
+  padding: 1rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+@media (min-width: 640px) {
+  .section {
+    margin: 1.5rem auto;
+    padding: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section {
+    margin: 2rem auto;
+    padding: 2rem;
+  }
+}
+
+h1 {
+  color: #fbbc04;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.75rem;
+  font-weight: 500;
+  font-family: 'Roboto', 'Segoe UI', Arial, sans-serif;
+  letter-spacing: -0.5px;
+  background: linear-gradient(45deg, #fbbc04, #fdd663);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient 8s ease infinite;
+  background-size: 200% 200%;
+}
+
+@media (min-width: 640px) {
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 1.75rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.input-container {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0 1rem;
+}
+
+@media (min-width: 640px) {
+  .input-container {
+    gap: 1rem;
+    padding: 0 1.5rem;
+  }
+}
+
+.username {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  font-family: 'Roboto', 'Segoe UI', Arial, sans-serif;
+  border: none;
+  border-radius: 8px;
+  background-color: #ffffff;
+  color: #202124;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 1px 2px 0 rgba(251, 188, 4, 0.3),
+    0 1px 3px 1px rgba(251, 188, 4, 0.15);
+}
+
+@media (min-width: 640px) {
+  .username {
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+  }
+}
+
+.username:focus {
+  outline: none;
+  background-color: #ffffff;
+  color: #202124;
+  box-shadow: 0 1px 2px 0 rgba(251, 188, 4, 0.3),
+    0 2px 6px 2px rgba(251, 188, 4, 0.15);
+}
+
+.search-button {
+  width: 100%;
+  max-width: 200px;
+  padding: 0.75rem;
+  background-color: #fbbc04;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-family: 'Roboto', 'Segoe UI', Arial, sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: 500;
+  box-shadow: 0 1px 2px 0 rgba(251, 188, 4, 0.3),
+    0 1px 3px 1px rgba(251, 188, 4, 0.15);
+}
+
+@media (min-width: 640px) {
+  .search-button {
+    padding: 0.8rem;
+    font-size: 1rem;
+  }
+}
+
+.search-button:hover {
+  background-color: #fdd663;
+}
+
+.note-container {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 500px;
+  padding: 0.5rem;
+  overflow-y: auto;
+  max-height: calc(100vh - 300px);
+  scrollbar-width: thin;
+  scrollbar-color: #fbbc04 #f5f5f5;
+}
+
+/* Custom scrollbar for note container */
+.note-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.note-container::-webkit-scrollbar-track {
+  background: #f5f5f5;
+  border-radius: 4px;
+}
+
+.note-container::-webkit-scrollbar-thumb {
+  background-color: #fbbc04;
+  border-radius: 4px;
+}
+
+.note-container::-webkit-scrollbar-thumb:hover {
+  background-color: #fdd663;
+}
+
+@media (min-width: 640px) {
+  .note-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .note-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .note-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.note-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background-color: #ffffff;
+  border-left: 3px solid #fbbc04;
+  border-radius: 0;
+  box-shadow: 0 1px 2px 0 rgba(251, 188, 4, 0.3),
+    0 1px 3px 1px rgba(251, 188, 4, 0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  min-height: 60px;
+  position: relative;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+@media (min-width: 640px) {
+  .note-card {
+    padding: 0.875rem 1.25rem;
+    min-height: 65px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .note-card {
+    padding: 1rem 1.5rem;
+    min-height: 70px;
+  }
+}
+
+.note-card:hover {
+  transform: translateX(4px);
+  box-shadow: 0 1px 2px 0 rgba(251, 188, 4, 0.3),
+    0 2px 6px 2px rgba(251, 188, 4, 0.15);
+}
+
+.note-card li {
+  list-style: none;
+  margin: 0;
+  color: #202124;
+  font-size: 0.875rem;
+  font-family: 'Roboto', 'Segoe UI', Arial, sans-serif;
+  line-height: 1.4;
+  flex-grow: 1;
+  padding-right: 3.5rem;
+  word-break: break-word;
+  white-space: pre-wrap;
+}
+
+@media (min-width: 640px) {
+  .note-card li {
+    font-size: 1rem;
+  }
+}
+
+.note-card .button-container {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@media (min-width: 640px) {
+  .note-card .button-container {
+    gap: 0.8rem;
+    right: 1rem;
+  }
+}
+
+.button {
+  padding: 0.35rem;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background-color: #fbbc04;
+  color: #ffffff;
+}
+
+@media (min-width: 640px) {
+  .button {
+    padding: 0.4rem;
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.button:hover {
+  background-color: #fdd663;
+  color: #ffffff;
+}
+
+.note-card .button i {
+  font-size: 0.875rem;
+}
+
+@media (min-width: 640px) {
+  .note-card .button i {
+    font-size: 1rem;
+  }
+}
+
+.edit-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background-color: #ffffff;
+  border-left: 3px solid #fbbc04;
+  border-radius: 0;
+  box-shadow: 0 1px 2px 0 rgba(251, 188, 4, 0.3),
+    0 1px 3px 1px rgba(251, 188, 4, 0.15);
+  min-height: 60px;
+  position: relative;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+@media (min-width: 640px) {
+  .edit-card {
+    padding: 0.875rem 1.25rem;
+    min-height: 65px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .edit-card {
+    padding: 1rem 1.5rem;
+    min-height: 70px;
+  }
+}
+
+.edit-card input {
+  width: calc(100% - 5rem);
+  padding: 0.5rem;
+  font-size: 0.875rem;
+  font-family: 'Roboto', 'Segoe UI', Arial, sans-serif;
+  border: none;
+  border-radius: 0;
+  background-color: #ffffff;
+  color: #202124;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  margin: 0;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  display: block;
+}
+
+@media (min-width: 640px) {
+  .edit-card input {
+    padding: 0.6rem;
+    font-size: 1rem;
+  }
+}
+
+.edit-card input:focus {
+  outline: none;
+  background-color: #ffffff;
+  color: #202124;
+  box-shadow: 0 1px 2px 0 rgba(251, 188, 4, 0.3),
+    0 2px 6px 2px rgba(251, 188, 4, 0.15);
+}
+
+.edit-card .button-container {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@media (min-width: 640px) {
+  .edit-card .button-container {
+    gap: 0.8rem;
+    right: 1rem;
+  }
+}
+
+.edit-card .button {
+  background-color: #fbbc04;
+  color: #ffffff;
+  width: 28px;
+  height: 28px;
+  border: 2px solid #fbbc04;
+  transition: all 0.3s ease;
+}
+
+@media (min-width: 640px) {
+  .edit-card .button {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.edit-card .button:hover {
+  background-color: #ffffff;
+  color: #fbbc04;
+  border: 2px solid #fbbc04;
+}
+
+.edit-card .cancel {
+  background-color: #fbbc04;
+  color: #ffffff;
+  border: 2px solid #fbbc04;
+}
+
+.edit-card .cancel:hover {
+  background-color: #ffffff;
+  color: #fbbc04;
+  border: 2px solid #fbbc04;
+}
+
+.edit-card .button i {
+  font-size: 0.875rem;
+  transition: all 0.3s ease;
+}
+
+@media (min-width: 640px) {
+  .edit-card .button i {
+    font-size: 1rem;
+  }
+}
